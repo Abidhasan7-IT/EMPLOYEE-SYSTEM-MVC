@@ -1,0 +1,63 @@
+﻿@model IEnumerable<FINAL.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<center>
+    <h2 style="color:navy">CREATE EMPLOYEE DATA</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table"   border="6" >
+        <tr style="color:maroon">
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shift)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nationality)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="color:dark">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td style="color:dark">
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td style="color:dark">
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td style="color:dark">
+                    @Html.DisplayFor(modelItem => item.Shift)
+                </td>
+                <td style="color:dark">
+                    @Html.DisplayFor(modelItem => item.Nationality)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.E_ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.E_ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.E_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <img src="~/image/G.gif" />
+</center>
+
